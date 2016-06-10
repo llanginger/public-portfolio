@@ -63,6 +63,13 @@ $(function() {
     )
   };
 
+  $(window).scroll(function(){
+    var wScroll = $(this).scrollTop();
+
+    console.log(Math.round(wScroll));
+
+  })
+
   $(".suffix").mouseenter(function() {
     $(this).css("color", "red");
   }).mouseleave(function() {
