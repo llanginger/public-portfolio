@@ -75,9 +75,11 @@ $(function() {
     $(this).addClass("pulse");
   });
 
+  var $aboutMe = $("#aboutMe");
+
   $(".down-icon").click(function(e){
     $("html, body").animate({
-      scrollTop: $("#aboutMe").offset().top
+      scrollTop: $aboutMe.offset().top
     }, 1000)
   })
 
