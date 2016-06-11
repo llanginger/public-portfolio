@@ -42,6 +42,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/cover-img-lg copy.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 179809,
+		"inputAbbreviatedPath": "\/images\/cover-img-lg copy.jpg",
+		"outputAbbreviatedPath": "\/images\/cover-img-lg copy.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/cover-img-lg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -82,6 +93,17 @@
 		"initialSize": 611,
 		"inputAbbreviatedPath": "\/images\/freeline\/down2.png",
 		"outputAbbreviatedPath": "\/images\/freeline\/down2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/take-me-lg copy.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.88177e+06,
+		"inputAbbreviatedPath": "\/images\/take-me-lg copy.png",
+		"outputAbbreviatedPath": "\/images\/take-me-lg copy.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

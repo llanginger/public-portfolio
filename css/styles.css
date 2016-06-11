@@ -17,7 +17,7 @@ h1 {
 
 
 hr {
-	border: 1px solid #999;
+	border: 1px solid #8c8c8c;
 }
 
 .top-30 {
@@ -43,17 +43,7 @@ hr {
 	/*height: 100vh;*/
 }
 
-.down-icon {
-	position: absolute;
-	top: 90%;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
-	height: 40px;
-	cursor: pointer;
-	/*background-color: white;*/
-}
+
 
 @keyframes pulse {
     0% {
@@ -74,10 +64,24 @@ hr {
 }
 
 .hero-image-box {
+<<<<<<< HEAD
 	height: 100vh;
   background-image: url("/images/cover-img-lg.jpg");
   background-size: cover;
   background-position: center;
+||||||| merged common ancestors
+height: 100vh;
+  background-image: url("/images/cover-img-lg.jpg");
+  background-size: cover;
+  background-position: center;
+=======
+	position: relative;
+	height: 100vh;
+	  background-image: url("/images/cover-img-lg.jpg");
+	  background-size: cover;
+	  background-position: center;
+		background-attachment: fixed;
+>>>>>>> master
   margin-bottom: 50px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -97,13 +101,29 @@ hr {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+
 }
 
-.title-box {
+
+.logo-box {
   background: white;
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.down-icon {
+	position: absolute;
+	transition:all is linear;
+	top: 90%;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40px;
+	cursor: pointer;
+	/*background-color: white;*/
+}
+
 .main-title-text {
   display: flex;
   align-items: center;
@@ -115,12 +135,36 @@ hr {
   top: 30%;
   width: 100%
 }
+
 .portfolio-pic {
   text-align: center;
-  width: 350px;
-  height: 250px;
+  max-width: 350px;
+  max-height: 250px;
   overflow: hidden;
 }
+
+.skills {
+	margin-top: 40px;
+	height: 200px;
+
+}
+
+.about-me {
+	background: #e6f9ff;
+	width: 100%;
+	/*color: white;*/
+}
+
+.profile-pic {
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+
 
 
 .hovereffect {
