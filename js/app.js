@@ -1,45 +1,72 @@
 $(function() {
 
+  function debounce(func, wait, immediate) {
+  	var timeout;
+  	return function() {
+  		var context = this, args = arguments;
+  		var later = function() {
+  			timeout = null;
+  			if (!immediate) func.apply(context, args);
+  		};
+  		var callNow = immediate && !timeout;
+  		clearTimeout(timeout);
+  		timeout = setTimeout(later, wait);
+  		if (callNow) func.apply(context, args);
+  	};
+  };
+
   var webPortfolioItems = [
+    {
+      title: "What Did We Eat Now?",
+      imgSrc: "images/what-did-we-eat.png",
+      linkSrc: "http://llanginger.github.io/health-tracker/",
+      linkText: "LINK HERE"
+    },
     {
       title: "Take Me Somewhere New",
       imgSrc: "images/take-me-lg.png",
-      linkSrc: "http://llanginger.github.io/FEND-neighborhoodMap/"
+      linkSrc: "http://llanginger.github.io/FEND-neighborhoodMap/",
+      linkText: "LINK HERE"
     },
     {
       title: "Classic Arcade Clone",
-      imgSrc: "images/arcade-game.png",
-      linkSrc: "http://llanginger.github.io/FEND-Frogger/"
-    },
-    {
-      title: "Classic Arcade Clone",
-      imgSrc: "images/arcade-game.png",
-      linkSrc: "http://llanginger.github.io/FEND-Frogger/"
+      imgSrc: "images/arcade-game-wide.png",
+      linkSrc: "http://llanginger.github.io/FEND-Frogger/",
+      linkText: "LINK HERE"
     }
   ];
+
+  if (webPortfolioItems.length % 2 != 0) {
+    webPortfolioItems.push({
+      title: "MORE TO COME SOON",
+      imgSrc: "images/odd-panel.png",
+      linkSrc: "",
+      linkText: ""
+    })
+  }
 
   var musicPortfolioItems = [
     {
       title: "Classic Arcade Clone",
-      imgSrc: "images/arcade-game.png",
+      imgSrc: "images/arcade-game-wide.png",
       linkSrc: "http://llanginger.github.io/FEND-Frogger/"
     },
     {
       title: "Classic Arcade Clone",
-      imgSrc: "images/arcade-game.png",
+      imgSrc: "images/arcade-game-wide.png",
       linkSrc: "http://llanginger.github.io/FEND-Frogger/"
     }
   ];
 
   for (item in webPortfolioItems) {
     $(".web-dev-portfolio").append(
-      '<div class="col-md-6 top-30">' +
-        '<div class="hovereffect center-block">' +
+      '<div class="col-md-6 portfolio-item">' +
+        '<div class="hovereffect top-30 center-block">' +
           '<img class="img-responsive portfolio-pic" src="' + webPortfolioItems[item].imgSrc + '" alt="">' +
           '<div class="overlay">' +
             '<h2>' + webPortfolioItems[item].title + '</h2>' +
             '<p>' +
-              '<a target="_blank" href="' + webPortfolioItems[item].linkSrc + '">LINK HERE</a>' +
+              '<a target="_blank" href="' + webPortfolioItems[item].linkSrc + '">' + webPortfolioItems[item].linkText + '</a>' +
             '</p>' +
           '</div>' +
         '</div>' +
@@ -47,56 +74,91 @@ $(function() {
     )
   };
 
-  for (item in musicPortfolioItems) {
-    $(".music-portfolio").append(
-      '<div class="col-md-6 top-30">' +
-        '<div class="hovereffect center-block">' +
-          '<img class="img-responsive portfolio-pic" src="' + musicPortfolioItems[item].imgSrc + '" alt="">' +
-          '<div class="overlay">' +
-            '<h2>' + musicPortfolioItems[item].title + '</h2>' +
-            '<p>' +
-              '<a target="_blank" href="' + musicPortfolioItems[item].linkSrc + '">LINK HERE</a>' +
-            '</p>' +
-          '</div>' +
-        '</div>' +
-      '</div>'
-    )
-  };
+  var $body = $("html, body");
+  var $downIcon = $(".down-icon");
+  var $logoBox = $(".logo-box");
+  var $portfolioItem = $(".portfolio-item");
+  var $myWork = $("#my-work");
+  var $highlightonMouseEnter = $(".suffix, .check-out");
+
 
   $(window).scroll(function(){
     var wScroll = $(this).scrollTop();
 
     console.log(Math.round(wScroll));
 
-    $(".logo-box").css({
+    $logoBox.css({
       "transform": "translate(0px, " + wScroll /3.75 + "%)"
     })
 
     // TODO fix this
     if (wScroll > 275) {
-      $(".logo-box").fadeOut();
+      $logoBox.fadeOut();
     } else {
-      $(".logo-box").fadeIn();
+      $logoBox.fadeIn();
     };
+
+    if (wScroll < 200) {
+      $portfolioItem.removeClass("showing");
+    }
+
+    if (wScroll > ($myWork.offset().top - 300) && !$portfolioItem.hasClass("showing")) {
+      requestAnimationFrame(loadPortfolioPics)
+      // $portfolioItem.each(function(i){
+      //   setTimeout(function(){
+      //     $portfolioItem.eq(i).addClass("showing");
+      //   }, 150 * (i + 1));
+      // })
+    }
 
   })
 
-  $(".suffix, .check-out").mouseenter(function() {
-    $(this).css("color", "red");
+  var loadPortfolioPics = function() {
+    console.log("loadPortfolioPics called")
+    $portfolioItem.each(function(i){
+      setTimeout(function(){
+        $portfolioItem.eq(i).addClass("showing");
+      }, 150 * (i + 1));
+    })
+    if (!$portfolioItem.hasClass("showing")) {
+      requestAnimationFrame(loadPortfolioPics);
+    }
+  }
+
+  $highlightonMouseEnter.mouseenter(function() {
+    $(this).css("color", "#E040FB");
   }).mouseleave(function() {
     $(this).css("color", "black");
   })
 
-  $(".down-icon").mouseenter(function() {
+  $downIcon.mouseenter(function() {
     $(this).removeClass("pulse");
   }).mouseleave(function() {
     $(this).addClass("pulse");
   });
 
-  $(".down-icon").click(function(e){
-    $("html, body").animate({
-      scrollTop: $("#my-work").offset().top
-    }, 1000)
+
+
+
+
+  var scrollDownRaf = function() {
+    console.log("rAF call fired at: " + Date.now())
+    $body.animate({
+      scrollTop: $myWork.offset().top
+    }, 1000);
+    if (!$myWork.offset().top){
+      requestAnimationFrame(scrollDownRaf);
+    }
+  }
+
+
+  $downIcon.click(function(e){
+    console.log("icon clicked")
+    // scrollDown();
+    requestAnimationFrame(scrollDownRaf)
+    // $body.animate({
+    //   scrollTop: $myWork.offset().top
+    // }, 1000)
   })
 
 

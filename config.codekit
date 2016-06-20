@@ -20,13 +20,35 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/images\/arcade-game.png": {
+	"\/images\/arcade-game-old.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 442041,
-		"inputAbbreviatedPath": "\/images\/arcade-game.png",
-		"outputAbbreviatedPath": "\/images\/arcade-game.png",
+		"inputAbbreviatedPath": "\/images\/arcade-game-old.png",
+		"outputAbbreviatedPath": "\/images\/arcade-game-old.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/arcade-game-wide.old.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 81492,
+		"inputAbbreviatedPath": "\/images\/arcade-game-wide.old.png",
+		"outputAbbreviatedPath": "\/images\/arcade-game-wide.old.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/arcade-game-wide.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 112692,
+		"inputAbbreviatedPath": "\/images\/arcade-game-wide.png",
+		"outputAbbreviatedPath": "\/images\/arcade-game-wide.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -68,7 +90,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 79535,
+		"initialSize": 178888,
 		"inputAbbreviatedPath": "\/images\/cover-img.jpg",
 		"outputAbbreviatedPath": "\/images\/cover-img.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -93,6 +115,39 @@
 		"initialSize": 611,
 		"inputAbbreviatedPath": "\/images\/freeline\/down2.png",
 		"outputAbbreviatedPath": "\/images\/freeline\/down2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/me.JPG": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 479069,
+		"inputAbbreviatedPath": "\/images\/me.JPG",
+		"outputAbbreviatedPath": "\/images\/me.JPG",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/odd-panel.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3902,
+		"inputAbbreviatedPath": "\/images\/odd-panel.png",
+		"outputAbbreviatedPath": "\/images\/odd-panel.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/profile-pic.JPG": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 57887,
+		"inputAbbreviatedPath": "\/images\/profile-pic.JPG",
+		"outputAbbreviatedPath": "\/images\/profile-pic.JPG",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -130,6 +185,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/what-did-we-eat.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 283977,
+		"inputAbbreviatedPath": "\/images\/what-did-we-eat.png",
+		"outputAbbreviatedPath": "\/images\/what-did-we-eat.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -145,6 +211,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/app.js",
 		"outputAbbreviatedPath": "\/js\/min\/app-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/lib\/jquery.requestAnimationFrame.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/lib\/jquery.requestAnimationFrame.min.js",
+		"outputAbbreviatedPath": "\/js\/lib\/min\/jquery.requestAnimationFrame.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/lib\/min\/jquery.requestAnimationFrame.min-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/lib\/min\/jquery.requestAnimationFrame.min-min.js",
+		"outputAbbreviatedPath": "\/js\/lib\/min\/min\/jquery.requestAnimationFrame.min-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
