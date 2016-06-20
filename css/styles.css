@@ -4,15 +4,38 @@
 	/*color: #999999;*/
 }
 
+p {
+	font-size: 18px;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
 .padding-0 {
   padding: 0;
 }
+
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
 h1 {
+	border-color: #B6B6B6;
 	/*font-weight: 100;*/
 	font-size: 60px;
+}
+
+a:hover {
+	color: #E040FB;
+}
+
+.work-link {
+	color: black;
+	text-decoration: underline;
+	font-size: 18px;
+}
+
+.music-portfolio {
+	padding: 0px;
 }
 
 
@@ -39,8 +62,30 @@ hr {
   background: blue;
 }
 
+.wide-light {
+	background-color: #2196F3;
+	height: 60px;
+	/*display: flex;*/
+	color: white;
+}
+
 .main-img {
 	/*height: 100vh;*/
+}
+
+.check-out {
+	font-size: 18px;
+}
+
+.portfolio-item {
+	opacity: 0;
+	transition: translateX(20px);
+	transition: all 0.5s ease-in-out
+}
+
+.showing {
+	opacity: 1;
+	transform: translateX(0px);
 }
 
 
@@ -60,28 +105,16 @@ hr {
 }
 
 .pulse {
-    animation: pulse 3s linear infinite;
+    animation: pulse 2s linear infinite;
 }
 
 .hero-image-box {
-<<<<<<< HEAD
-	height: 100vh;
-  background-image: url("/images/cover-img-lg.jpg");
-  background-size: cover;
-  background-position: center;
-||||||| merged common ancestors
-height: 100vh;
-  background-image: url("/images/cover-img-lg.jpg");
-  background-size: cover;
-  background-position: center;
-=======
 	position: relative;
 	height: 100vh;
 	  background-image: url("/images/cover-img-lg.jpg");
 	  background-size: cover;
 	  background-position: center;
 		background-attachment: fixed;
->>>>>>> master
   margin-bottom: 50px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -138,8 +171,9 @@ height: 100vh;
 
 .portfolio-pic {
   text-align: center;
-  max-width: 350px;
-  max-height: 250px;
+  width: 350px;
+  height: 250px;
+	object-fit: cover;
   overflow: hidden;
 }
 
@@ -150,15 +184,22 @@ height: 100vh;
 }
 
 .about-me {
-	background: #e6f9ff;
+	position: relative;
+	background: #1976D2;
 	width: 100%;
-	/*color: white;*/
+	color: #FFFFFF;
+
 }
 
 .profile-pic {
 	margin-bottom: 20px;
+	 -webkit-filter: drop-shadow(5px 5px 10px #303F9F)
 }
 
+.skill-rule {
+	width: 20%;
+	border-color: #E040FB;
+}
 
 
 
