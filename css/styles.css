@@ -145,6 +145,7 @@ hr {
 }
 
 .down-icon {
+	color: white;
 	position: absolute;
 	transition:all is linear;
 	top: 90%;
