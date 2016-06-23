@@ -85,6 +85,7 @@ $(function() {
   $(window).scroll(function(){
     var wScroll = $(this).scrollTop();
 
+<<<<<<< HEAD
     console.log(Math.round(wScroll));
 
     $logoBox.css({
@@ -127,6 +128,53 @@ $(function() {
 
   $highlightonMouseEnter.mouseenter(function() {
     $(this).css("color", "#E040FB");
+||||||| merged common ancestors
+  $(".suffix").mouseenter(function() {
+    $(this).css("color", "red");
+=======
+    // console.log(Math.round(wScroll));
+
+    $logoBox.css({
+      "transform": "translate(0px, " + wScroll /3.75 + "%)"
+    })
+
+    // TODO fix this
+    if (wScroll > 275) {
+      $logoBox.fadeOut();
+    } else {
+      $logoBox.fadeIn();
+    };
+
+    if (wScroll < 200) {
+      $portfolioItem.removeClass("showing");
+    }
+
+    if (wScroll > ($myWork.offset().top - 300) && !$portfolioItem.hasClass("showing")) {
+      requestAnimationFrame(loadPortfolioPics)
+      // $portfolioItem.each(function(i){
+      //   setTimeout(function(){
+      //     $portfolioItem.eq(i).addClass("showing");
+      //   }, 150 * (i + 1));
+      // })
+    }
+
+  })
+
+  var loadPortfolioPics = function() {
+    console.log("loadPortfolioPics called")
+    $portfolioItem.each(function(i){
+      setTimeout(function(){
+        $portfolioItem.eq(i).addClass("showing");
+      }, 150 * (i + 1));
+    })
+    if (!$portfolioItem.hasClass("showing")) {
+      requestAnimationFrame(loadPortfolioPics);
+    }
+  }
+
+  $highlightonMouseEnter.mouseenter(function() {
+    $(this).css("color", "#E040FB");
+>>>>>>> gh-pages
   }).mouseleave(function() {
     $(this).css("color", "black");
   })
