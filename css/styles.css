@@ -111,10 +111,8 @@ hr {
 .hero-image-box {
 	position: relative;
 	height: 100vh;
-	  background: #1976D2;
-	  background-size: cover;
-	  /*background-position: center;
-		background-attachment: fixed;*/
+  background: #1976D2;
+  background-size: cover;
   margin-bottom: 50px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -250,6 +248,13 @@ hr {
   transform: translate3d(0,0,0);
 }
 
+.hovereffect:focus img {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
 .hovereffect h2 {
   text-transform: uppercase;
   color: #fff;
@@ -280,6 +285,11 @@ hr {
   transform: translate3d(0,0,0);
 }
 
+.hovereffect:focus h2:after {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
 .hovereffect a, .hovereffect p {
   color: #FFF;
   opacity: 0;
@@ -291,6 +301,13 @@ hr {
 }
 
 .hovereffect:hover a, .hovereffect:hover p {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.hovereffect:focus a, .hovereffect:focus p {
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transform: translate3d(0,0,0);
