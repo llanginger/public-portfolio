@@ -114,7 +114,7 @@ $(function() {
   })
 
   var loadPortfolioPics = function() {
-    console.log("loadPortfolioPics called")
+    // console.log("loadPortfolioPics called")
     $portfolioItem.each(function(i){
       setTimeout(function(){
         $portfolioItem.eq(i).addClass("showing");
