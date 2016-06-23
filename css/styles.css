@@ -303,6 +303,7 @@ hr {
 /* You can modify these CSS styles */
 .vimeoBadge {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content:space-between;
 	margin: 0;
 	padding: 0;
