@@ -111,10 +111,10 @@ hr {
 .hero-image-box {
 	position: relative;
 	height: 100vh;
-	  background-image: url("../images/cover-img-lg.jpg");
+	  background: #1976D2;
 	  background-size: cover;
-	  background-position: center;
-		background-attachment: fixed;
+	  /*background-position: center;
+		background-attachment: fixed;*/
   margin-bottom: 50px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -357,3 +357,10 @@ hr {
 }
 
 .vimeoBadge .s160 { width: 160px; } .vimeoBadge .s80 { width: 80px; } .vimeoBadge .s100 { width: 100px; } .vimeoBadge .s200 { width: 200px; }
+
+
+/*@media (max-width: 400px) {
+	.hero-image-box {
+		background-image: url("../images/cover-img-sm.jpg");
+	}
+}*/
