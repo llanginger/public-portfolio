@@ -111,7 +111,7 @@ hr {
 .hero-image-box {
 	position: relative;
 	height: 100vh;
-	  background-image: url("/images/cover-img-lg.jpg");
+	  background-image: url("https://placekitten.com/400/300");
 	  background-size: cover;
 	  background-position: center;
 		background-attachment: fixed;
