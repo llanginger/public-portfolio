@@ -1,23 +1,40 @@
+// $(document).ready(function(){
+//     if (Modernizr.touch) {
+//         // show the close overlay button
+//         $(".close-overlay").removeClass("hidden");
+//         // handle the adding of hover class when clicked
+//         $(".image").click(function(e){
+//             if (!$(this).hasClass("hover")) {
+//                 $(this).addClass("hover");
+//             }
+//         });
+//         // handle the closing of the overlay
+//         $(".close-overlay").click(function(e){
+//             e.preventDefault();
+//             e.stopPropagation();
+//             if ($(this).closest(".image").hasClass("hover")) {
+//                 $(this).closest(".image").removeClass("hover");
+//             }
+//         });
+//     } else {
+//         // handle the mouseenter functionality
+//         $(".image").mouseenter(function(){
+//             $(this).addClass("hover");
+//         })
+//         // handle the mouseleave functionality
+//         .mouseleave(function(){
+//             $(this).removeClass("hover");
+//         });
+//     }
+// });
+
 $(function() {
+
 
   $("body").click(function(e){
     console.log(e.target);
   })
 
-  function debounce(func, wait, immediate) {
-  	var timeout;
-  	return function() {
-  		var context = this, args = arguments;
-  		var later = function() {
-  			timeout = null;
-  			if (!immediate) func.apply(context, args);
-  		};
-  		var callNow = immediate && !timeout;
-  		clearTimeout(timeout);
-  		timeout = setTimeout(later, wait);
-  		if (callNow) func.apply(context, args);
-  	};
-  };
 
   var webPortfolioItems = [
     {
@@ -49,30 +66,31 @@ $(function() {
     })
   }
 
-  var musicPortfolioItems = [
-    {
-      title: "Classic Arcade Clone",
-      imgSrc: "images/arcade-game-wide.png",
-      linkSrc: "http://llanginger.github.io/FEND-Frogger/"
-    },
-    {
-      title: "Classic Arcade Clone",
-      imgSrc: "images/arcade-game-wide.png",
-      linkSrc: "http://llanginger.github.io/FEND-Frogger/"
-    }
-  ];
+
+  // for (item in webPortfolioItems) {
+  //   $(".web-dev-portfolio").append(
+  //     '<div class="col-md-6 portfolio-item">' +
+  //       '<div class="hovereffect top-30 center-block">' +
+  //         '<img class="img-responsive portfolio-pic" src="' + webPortfolioItems[item].imgSrc + '" alt="">' +
+  //         '<div class="overlay">' +
+  //           '<h2>' + webPortfolioItems[item].title + '</h2>' +
+  //           '<p>' +
+  //             '<a target="_blank" href="' + webPortfolioItems[item].linkSrc + '">' + webPortfolioItems[item].linkText + '</a>' +
+  //           '</p>' +
+  //         '</div>' +
+  //       '</div>' +
+  //     '</div>'
+  //   )
+  // };
 
   for (item in webPortfolioItems) {
     $(".web-dev-portfolio").append(
-      '<div class="col-md-6 portfolio-item">' +
-        '<div class="hovereffect top-30 center-block">' +
-          '<img class="img-responsive portfolio-pic" src="' + webPortfolioItems[item].imgSrc + '" alt="">' +
-          '<div class="overlay">' +
-            '<h2>' + webPortfolioItems[item].title + '</h2>' +
-            '<p>' +
-              '<a target="_blank" href="' + webPortfolioItems[item].linkSrc + '">' + webPortfolioItems[item].linkText + '</a>' +
-            '</p>' +
-          '</div>' +
+      '<div class="col-md-6 image top-30 portfolio-item">'+
+        '<img class="img-responsive portfolio-pic" src="' + webPortfolioItems[item].imgSrc + '" />' +
+        '<div class="new-overlay">' +
+          '<p class="top-text">' + webPortfolioItems[item].title + '</p>' +
+          '<a target="_blank" href="' + webPortfolioItems[item].linkSrc + '" class="expand">+</a>' +
+          '<a class="close-overlay hidden">X</a>' +
         '</div>' +
       '</div>'
     )
@@ -108,11 +126,6 @@ $(function() {
 
     if (wScroll > ($myWork.offset().top - 300) && !$portfolioItem.hasClass("showing")) {
       requestAnimationFrame(loadPortfolioPics)
-      // $portfolioItem.each(function(i){
-      //   setTimeout(function(){
-      //     $portfolioItem.eq(i).addClass("showing");
-      //   }, 150 * (i + 1));
-      // })
     }
 
   })
@@ -141,31 +154,46 @@ $(function() {
     $(this).addClass("pulse");
   });
 
-
-
-
-
-  var scrollDownRaf = function() {
-    console.log("rAF call fired at: " + Date.now())
-    $body.animate({
-      scrollTop: $myWork.offset().top
-    }, 1000);
-    if (!$myWork.offset().top){
-      requestAnimationFrame(scrollDownRaf);
-    }
-  }
-
+  smoothScroll.init({
+    speed: 1000,
+    easing: "easeInOutCubic"
+  })
 
   $downIcon.click(function(e){
     console.log("icon clicked")
-    // scrollDown();
-    requestAnimationFrame(scrollDownRaf)
-    // $body.animate({
-    //   scrollTop: $myWork.offset().top
-    // }, 1000)
+    smoothScroll.animateScroll( "#my-work");
   })
 
 
+  if (Modernizr.touch) {
+      // show the close overlay button
+      $(".close-overlay").removeClass("hidden");
+      // handle the adding of hover class when clicked
+      $(".image").click(function(e){
+          if (!$(this).hasClass("hover")) {
+              $(this).addClass("hover");
+          }
+      });
+      // handle the closing of the overlay
+      $(".close-overlay").click(function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          if ($(this).closest(".image").hasClass("hover")) {
+              $(this).closest(".image").removeClass("hover");
+          }
+      });
+  } else {
+
+      // handle the mouseenter functionality
+      $(".image").mouseenter(function(){
+        console.log("moderniz")
+          $(this).addClass("hover");
+      })
+      // handle the mouseleave functionality
+      .mouseleave(function(){
+          $(this).removeClass("hover");
+      });
+  }
 
 
 
