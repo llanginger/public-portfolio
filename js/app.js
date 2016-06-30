@@ -1,34 +1,5 @@
-// $(document).ready(function(){
-//     if (Modernizr.touch) {
-//         // show the close overlay button
-//         $(".close-overlay").removeClass("hidden");
-//         // handle the adding of hover class when clicked
-//         $(".image").click(function(e){
-//             if (!$(this).hasClass("hover")) {
-//                 $(this).addClass("hover");
-//             }
-//         });
-//         // handle the closing of the overlay
-//         $(".close-overlay").click(function(e){
-//             e.preventDefault();
-//             e.stopPropagation();
-//             if ($(this).closest(".image").hasClass("hover")) {
-//                 $(this).closest(".image").removeClass("hover");
-//             }
-//         });
-//     } else {
-//         // handle the mouseenter functionality
-//         $(".image").mouseenter(function(){
-//             $(this).addClass("hover");
-//         })
-//         // handle the mouseleave functionality
-//         .mouseleave(function(){
-//             $(this).removeClass("hover");
-//         });
-//     }
-// });
-
 $(function() {
+
 
 
   $("body").click(function(e){
@@ -66,22 +37,6 @@ $(function() {
     })
   }
 
-
-  // for (item in webPortfolioItems) {
-  //   $(".web-dev-portfolio").append(
-  //     '<div class="col-md-6 portfolio-item">' +
-  //       '<div class="hovereffect top-30 center-block">' +
-  //         '<img class="img-responsive portfolio-pic" src="' + webPortfolioItems[item].imgSrc + '" alt="">' +
-  //         '<div class="overlay">' +
-  //           '<h2>' + webPortfolioItems[item].title + '</h2>' +
-  //           '<p>' +
-  //             '<a target="_blank" href="' + webPortfolioItems[item].linkSrc + '">' + webPortfolioItems[item].linkText + '</a>' +
-  //           '</p>' +
-  //         '</div>' +
-  //       '</div>' +
-  //     '</div>'
-  //   )
-  // };
 
   for (item in webPortfolioItems) {
     $(".web-dev-portfolio").append(
